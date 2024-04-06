@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- css -->
+  <link rel="stylesheet" href="./src/style.css" />
+  <!-- icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
+  <!-- font -->
+  <link
+    href="https://api.fontshare.com/v2/css?f[]=expose@700&f[]=panchang@400,700&f[]=neco@700,900&f[]=pally@400,500&display=swap"
+    rel="stylesheet" />
+
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <title>Todo-list</title>
+</head>
+
+<body>
+  <div class="app">
+    <main>
+      <form class="add-form">
+        <div class="container">
+          <div>
+            <span class="span-length">
+            </span>
+            <input type="text" placeholder="ADD Title" class="addTitle" maxlength="20" />
+          </div>
+
+          <div>
+            <span class="span-length-description">
+            </span>
+            <input type="text" placeholder="ADD Description" class="addDescription" maxlength="50" />
+          </div>
+        </div>
+
+
+          <div class="container2">
+              <select class="inputSection">
+                <option value="Pending">Pending</option>
+                <option value="In progress">In progress</option>
+                <option value="Completed">Completed</option>
+              </select>
+            <button type="submit" class="buttonSubmit"><i class="bx bx-plus"></i></button>
+          </div>
+      </form>
+      <table>
+        <thead>
+          <tr>
+            <th>Task</th>
+            <th>Description</th>
+            <th>Create at</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </main>
+  </div>
+  <section class="modal">
+    <div class="modalControls">
+      <p>Are you sure, you want to delete this task?</p>
+      <div class="buttons">
+        <button class="btn-yes">
+          <i class="bx bx-like"></i><span>Yes, do it now!</span>
+        </button>
+        <button class="btn-no">
+          <i class="bx bx-dislike"></i><span>No, cancel now</span>
+        </button>
+      </div>
+
+    </div>
+    <script type="module" src="src/script.ts"></script>
+</body>
+
+</html>
