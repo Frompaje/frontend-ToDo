@@ -8,6 +8,8 @@ import {
   spanDescriptio,
 } from "../constants/index.ts";
 import { createRow } from "../createRow/createRow.ts";
+import { API_URL } from "../config/index.ts";
+
 spanLegth.innerText = `
   The maximum number of letters is 20`;
 
@@ -26,7 +28,7 @@ addDescription.addEventListener("keyup", () => {
 
 export class Task {
   async returnAll() {
-    const response = await fetch("http://localhost:3333");
+    const response = await fetch(API_URL);
     const tasks: iTask[] = await response.json();
     return tasks;
   }
@@ -50,7 +52,7 @@ export class Task {
       status: select.value,
     };
 
-    await fetch("http://localhost:3333", {
+    await fetch(API_URL, {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(task),
@@ -71,7 +73,7 @@ export class Task {
       description: description,
       status: status,
     };
-    await fetch("http://localhost:3333", {
+    await fetch(API_URL, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(task),
@@ -82,7 +84,7 @@ export class Task {
     const task = {
       id: id,
     };
-    await fetch("http://localhost:3333", {
+    await fetch(API_URL, {
       method: "DELETE",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(task),
